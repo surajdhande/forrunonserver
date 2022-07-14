@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title></title>
+
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#name").blur(function () {
+                var url  = "http://localhost:9005/getdetails?from=" + $("#sh").val();
+
+                $.get(url, function (data, status) {
+                    if (status == "success")
+                        $("#data").html(data);
+                });
+
+
+            });
+                });
+
+
+
+
+
+
+    </script>
+</head>
+<body style="padding:40px">
+    <table>
+        <tr>
+            <td>  From :</td>
+            <td> <input type="text" name="sh" id="sh" /></td>
+        </tr>
+        <tr>
+            <td> To :</td>
+            <td>
+                <input list="data" />
+               
+            </td>
+
+           
+        </tr>
+        <tr>
+
+            <td>Message :</td>
+            <td> <input type="text" /></td>
+        </tr>
+        <tr>
+            <td style="padding:40px" colspan="2"><button class="btn btn-primary ">Submit</button> </td>
+        </tr>
+
+</table>
+
+
+    <datalist id="data">
+        <option>Sayali</option>
+        <option>Bakul</option>
+        <option>Amit</option>
+        <option>Priya</option>
+        <option>Vishal</option>
+    </datalist>
+
+
+
+</body>
+</html>
